@@ -329,7 +329,7 @@ class StructuredPerceptron(object):
         model_data = codecs.open(file_name, 'r', encoding='utf-8').readline().strip()
         model = json.loads(model_data)
         self.tags = set(model['tags'])
-        self.feature_weights = model['weights']
+        self.feature_weights.update(model['weights'])
         print("done", file=sys.stderr)
 
 
